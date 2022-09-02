@@ -37,7 +37,9 @@ impl Error for ArgError {
 }
 fn establish_connection() -> PgConnection {
     dotenv().ok();
-    let database_url = env::var("DATABASE_URL").expect("Bad url");
+    let database_url = "postgres://docker:docker@localhost:5432/bfpd";
+    print!("{}", database_url);
+    // let database_url = env::var("DATABASE_URL").expect("Bad url");
     PgConnection::establish(&database_url).expect(&format!("Error connecting to {}", database_url))
 }
 /// imports USDA csv files into the database
