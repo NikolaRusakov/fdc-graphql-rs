@@ -64,6 +64,8 @@ Note: You can use the up.sql and down.sql scripts to create a [diesel migration]
 4. Load the data by pointing the program to the full path containing the csv:
 ```
 ./target/release/ingest-cvs -p /path/to/csv/
+
+./target/aarch64-apple-darwin/release/ingest-cvs -p ./src/csvs
 ```
 The load takes about 3-10 minutes depending on your hardware.  Note:  you need to set a DATABASE_URL variable as described in Step 2 below before running the ingest-csv program.
 
