@@ -37,6 +37,8 @@ This will create the graphql-rs server in the ./target/release directory.  If yo
 
 ```
 cargo build --release --bin ingest-csv
+
+cargo build --release --target aarch64-apple-darwin
 ```
 
 ## How to run
@@ -85,6 +87,8 @@ GRAPHIQL_URL=http://localhost:8080/graphql
 Then run the server from the project root (the path where cargo.toml is located):
 ```
 ./target/release/graphql-rs
+
+./target/aarch64-apple-darwin/release/graphql-rs
 ```
 or start a Docker instance:
 ```
