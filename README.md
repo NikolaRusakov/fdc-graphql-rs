@@ -56,18 +56,22 @@ wget https://fdc.nal.usda.gov/fdc-datasets/FoodData_Central_Supporting_Data_csv_
 
 2. Create an empty schema using the schema. 
 ```
-createdb bfpd"
+createdb bfpd
 ```
 
 3. Use the Diesel migration script to create an empty database.
 ```
 psql -U user -W bfpd < database/pg/up.sql
+
+psql --dbname bfpd --host localhost --port 5432 --username postgres < database/pg/up.sql
 ```
 Note: You can use the up.sql and down.sql scripts to create a [diesel migration](https://diesel.rs/guides/getting-started/).  This is probably more trouble than it's worth unless you need to change the schema or just want to learn a bit more about diesel migrations.
 
 4. Load the data by pointing the program to the full path containing the csv:
 ```
 ./target/release/ingest-cvs -p /path/to/csv/
+
+./target/aarch64-apple-darwin/release/ingest-cvs -p ./src/csvs
 ```
 The load takes about 3-10 minutes depending on your hardware.  Note:  you need to set a DATABASE_URL variable as described in Step 2 below before running the ingest-csv program.
 
