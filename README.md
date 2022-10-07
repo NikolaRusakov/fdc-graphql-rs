@@ -24,7 +24,13 @@ If you haven't already, install the Rust [toolchain](https://www.rust-lang.org/t
 git clone git@github.com:littlebunch/graphql-rs.git
 ```
 ### Step 3: Build the binaries
+
+cargo additions:
+
+```bash
+cargo install evcxr_repl bacon 
 ```
+
 cargo build --release
 ```
 This will create the graphql-rs server in the ./target/release directory.  If you are importing USDA csv, then build the cli utility for doing that:
