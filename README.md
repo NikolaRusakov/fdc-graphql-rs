@@ -71,7 +71,7 @@ Note: You can use the up.sql and down.sql scripts to create a [diesel migration]
 ```
 ./target/release/ingest-cvs -p /path/to/csv/
 
-./target/aarch64-apple-darwin/release/ingest-cvs -p ./src/csvs
+./target/aarch64-apple-darwin/release/ingest-csv -p ./src/csvs/
 ```
 The load takes about 3-10 minutes depending on your hardware.  Note:  you need to set a DATABASE_URL variable as described in Step 2 below before running the ingest-csv program.
 
@@ -90,9 +90,9 @@ or start a Docker instance:
 ```
 docker run --rm -it -p 8080:8080 --env-file=/full/path/to/.env littlebunch/graphql-rs
 ```
-The client will be available at  http://localhost:8080/graphiql.
+The client will be available at  http://localhost:8090/graphiql.
 ## Sample Queries
-To get you started, here are some sample queries you can paste into the client of your choice, e.g. Insomnia, Postman or the local graphiql playground.  Use either http://localhost:8080/graphql or https://rs.littlebunch.com/graphql.
+To get you started, here are some sample queries you can paste into the client of your choice, e.g. Insomnia, Postman or the local graphiql playground.  Use either http://localhost:8090/graphql or https://rs.littlebunch.com/graphql.
 
 #### Food UPC 000000018753 with all nutrient data:
 ```
